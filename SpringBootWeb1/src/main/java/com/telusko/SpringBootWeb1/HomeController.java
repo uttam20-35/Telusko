@@ -14,7 +14,8 @@ public class HomeController {
     @RequestMapping("/")
     public String home(){
         System.out.println("Home Method Call");
-        return "index";
+//        return "calculator";
+        return "alieninfo";
     }
 
     /*@RequestMapping("/add")
@@ -54,7 +55,7 @@ public class HomeController {
 
     @RequestMapping("/add")
     public ModelAndView add(@RequestParam("numOne") int num, int num2, ModelAndView modelAndView){
-        System.out.println("Into the request param with 'modelandview' obj's add method");
+        System.out.println("Controller: add numbers Method");
         int result =num+num2;
 
         modelAndView.addObject("result", result);
@@ -64,5 +65,17 @@ public class HomeController {
         return modelAndView;
     }
 
+    @RequestMapping("/addAlien")
+    public ModelAndView addAlien(@RequestParam("aid") int aid,@RequestParam("aname") String aname, ModelAndView modelAndView){
+        System.out.println("Controller: addAlien Method");
+        Alien alien =new Alien();
+
+        alien.setAid(aid);
+        alien.setAname(aname);
+
+        modelAndView.addObject("alien", alien);
+        modelAndView.setViewName("result");
+        return modelAndView;
+    }
 
 }
