@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -53,7 +54,7 @@ public class HomeController {
         return "result";
     }*/
 
-    @RequestMapping("/add")
+    /*@RequestMapping("/add")
     public ModelAndView add(@RequestParam("numOne") int num, int num2, ModelAndView modelAndView){
         System.out.println("Controller: add numbers Method");
         int result =num+num2;
@@ -63,9 +64,9 @@ public class HomeController {
         System.out.println(result);
 
         return modelAndView;
-    }
+    }*/
 
-    @RequestMapping("/addAlien")
+    /*@RequestMapping("/addAlien")
     public ModelAndView addAlien(@RequestParam("aid") int aid,@RequestParam("aname") String aname, ModelAndView modelAndView){
         System.out.println("Controller: addAlien Method");
         Alien alien =new Alien();
@@ -76,6 +77,18 @@ public class HomeController {
         modelAndView.addObject("alien", alien);
         modelAndView.setViewName("result");
         return modelAndView;
+    }*/
+
+    /*@RequestMapping("/addAlien")
+    public String addAlien2(@ModelAttribute("alien1") Alien alien){
+        System.out.println("Controller: addAlien2 Method");
+        return "result";
+    }*/
+
+    @RequestMapping("/addAlien")
+    public String addAlien2(Alien alien) {
+        System.out.println("Controller: addAlien2 Method");
+        return "result";
     }
 
 }
