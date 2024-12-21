@@ -1,5 +1,4 @@
-<%@page language="java" %>
-   <html>
+	<html>
         <body>
             <h1> Telusko Calculator</h1>
 
