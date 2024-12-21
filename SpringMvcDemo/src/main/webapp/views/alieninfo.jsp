@@ -1,4 +1,4 @@
-<%@page language="java" %>
+<%@page language="java" isELIgnored="false" %>
     <html>
         <body>
             <h1> Telusko Alien Info </h1>
