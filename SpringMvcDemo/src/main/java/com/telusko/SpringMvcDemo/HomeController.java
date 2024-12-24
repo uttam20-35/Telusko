@@ -1,9 +1,11 @@
 package com.telusko.SpringMvcDemo;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 
 @Controller
 public class HomeController {
@@ -12,8 +14,8 @@ public class HomeController {
 	public String home() {
 		System.out.println("Home Method Call");
 //        return "calculator";
-		return "alieninfo.jsp";
-//        return "index.jsp";
+//		return "alieninfo.jsp";
+        return "index";
 	}
 
 	/*
@@ -62,15 +64,17 @@ public class HomeController {
 	 */
 
 	
-	  @RequestMapping("/addAlien") public ModelAndView
-	  addAlien(@RequestParam("aid") int aid,@RequestParam("aname") String aname,
-	  ModelAndView modelAndView){
-	  System.out.println("Controller: addAlien Method"); Alien alien =new Alien();
-	  
-	  alien.setAid(aid); alien.setAname(aname);
-	  
-	  modelAndView.addObject("alien", alien); modelAndView.setViewName("result");
-	  return modelAndView; }
+	/*
+	 * @RequestMapping("/addAlien") public ModelAndView
+	 * addAlien(@RequestParam("aid") int aid,@RequestParam("aname") String
+	 * aname,ModelAndView modelAndView) {
+	 * System.out.println("Controller: addAlien Method"); Alien alien =new Alien();
+	 * 
+	 * alien.setAid(aid); alien.setAname(aname);
+	 * 
+	 * modelAndView.addObject("alien", alien); modelAndView.setViewName("result");
+	 * return modelAndView; }
+	 */
 	 
 
 	/*
@@ -78,10 +82,10 @@ public class HomeController {
 	 * addAlien2(@ModelAttribute("alien1") Alien alien){
 	 * System.out.println("Controller: addAlien2 Method"); return "result"; }
 	 */
-
+	 
 	
 	/*
-	 * @RequestMapping("/addAlien") public String addAlien3(Alien alien) {
+	 * @RequestMapping("/addAlien") public String addAlien(Alien alien) {
 	 * System.out.println("Controller: addAlien3 Method"); return "result"; }
 	 */
 	 
